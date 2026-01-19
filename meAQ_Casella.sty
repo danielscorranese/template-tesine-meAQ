@@ -1,0 +1,61 @@
+\ProvidesPackage{meAQ_Casella} % Nome del pacchetto
+
+% --- IMPOSTAZIONI PAGINA E MARGINI [cite: 21] ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+
+% --- GESTIONE FONT (Arial/Helvetica)  ---
+% LaTeX standard usa Helvetica come clone di Arial.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault} % Imposta sans-serif come default
+
+% --- LINGUA ---
+\usepackage[italian]{babel}
+\usepackage{csquotes}
+
+% --- FORMATTAZIONE PARAGRAFI ---
+\usepackage{setspace}
+\singlespacing % Interlinea singola
+\usepackage[parfill]{parskip} % Rimuove rientro, aggiunge spazio tra paragrafi
+
+% --- FORMATTAZIONE TITOLI SEZIONI ---
+\usepackage{titlesec}
+
+% Sezioni: Grassetto, Maiuscolo, senza numero
+\titleformat{\section}
+  {\normalfont\large\bfseries\uppercase} % Format
+  {} % Nessuna etichetta/numero
+  {0pt} % Nessuna separazione dal margine
+  {} % Before code
+
+% Sottosezioni: Grassetto, Non maiuscolo, senza numero
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {} % Nessuna etichetta/numero
+  {0pt}
+  {}
+
+% --- BIBLIOGRAFIA ---
+% Stile autore-anno (es: Del Duca 1987)
+\usepackage[style=authoryear, backend=biber]{biblatex}
+% Imposta il font della bibliografia a 10pt (footnotesize)
+\renewcommand*{\bibfont}{\footnotesize}
+% Spaziatura verticale tra le voci bibliografiche
+\setlength{\bibitemsep}{0.7\baselineskip}
+% "et al." in corsivo
+\DefineBibliographyStrings{italian}{andothers = {\mkbibemph{et\addabbrvspace al\adddot}}}
+
+% --- IMMAGINI E DIDASCALIE ---
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=normalfont]{caption}
+
+% --- FORMULE MATEMATICHE ---
+\usepackage[fleqn]{amsmath} % equazioni allineate a sinistra
+\setlength{\mathindent}{2cm} % rientro di circa 2 cm dal margine sinistro
+\usepackage{amssymb}
+
+% Numerazione equazioni come "(eq. n)"
+\makeatletter
+\renewcommand{\tagform@}[1]{\maketag@@@{(eq.\ \ignorespaces#1\unskip\@@italiccorr)}}
+\makeatother
