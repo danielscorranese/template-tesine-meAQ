@@ -4,30 +4,47 @@
 \usepackage{meAQ_Casella}
 \usepackage{ragged2e}
 
+% Dati della tesina (inserisci qui i tuoi dati)
+\newcommand{\TitoloTesina}{MODELLO DI REDAZIONE DELLE TESINE D'ESAME}
+\newcommand{\AutoreTesina}{(nome e cognome)}
+\newcommand{\CorsoEsame}{esame del corso di ...}
+\newcommand{\DataEsame}{data ...}
+\newcommand{\CorsoAccademico}{DCSL34 oppure DCPL34}
+
+% Metadati del PDF (titolo, autore, ecc.)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    pdftitle    = {\TitoloTesina},
+    pdfauthor   = {\AutoreTesina},
+    pdfsubject  = {\CorsoEsame},
+    pdfkeywords = {musica elettronica, tesina, Conservatorio A. Casella}
+}
+
 % Importa il file bibliografico
 \addbibresource{bibliografia.bib}
 
 \begin{document}
 
-% --- PRIMA PAGINA (Frontespizio e Abstract)
+% --- PRIMA PAGINA (Frontespizio)
 \begin{titlepage}
-    \thispagestyle{plain}% mostra il numero di pagina anche sul frontespizio
+    \thispagestyle{plain} % mostra il numero di pagina anche sul frontespizio
     \begin{center}
         % Intestazione
-        Corsi Accademici di Musica Elettronica / DCSL34 oppure DCPL34\\
+        Corsi Accademici di Musica Elettronica / \CorsoAccademico\\
         Conservatorio A. Casella, L'Aquila
         
         \vspace{0.2cm}
         
-        % Titolo Tesina
-        {\fontsize{14}{17}\selectfont \textbf{\uppercase{MODELLO DI REDAZIONE DELLE TESINE D'ESAME}}}\\
-        di (nome e cognome)
+        % Titolo tesina
+        {\fontsize{14}{17}\selectfont \textbf{\uppercase{\TitoloTesina}}}\\
+        % Nome e cognome studente
+        di \AutoreTesina
         
         \vspace{0.7cm}
         
-        % Dati Esame
-        esame del corso di ...\\
-        data ...
+        % Dati esame
+        \CorsoEsame\\
+        \DataEsame
         
         \vspace{9cm}
         
@@ -61,8 +78,9 @@
 \end{titlepage}
 
 % --- INIZIO TESTO ---
-\setcounter{page}{2}% la pagina successiva al frontespizio è la 2
+\setcounter{page}{2} % la pagina successiva al frontespizio è la 2
 
+% --- [SECTION] INTRODUZIONE ---
 \section{INTRODUZIONE} 
 L’introduzione serve a circoscrivere e identificare il tema affrontato, nonché a descrivere
 come lo si è voluto affrontare e come è stato organizzato il discorso complessivo della
@@ -95,7 +113,10 @@ note a fondo pagina avranno carattere Arial corpo 10, come in questa nota di ese
 note a fondo pagina vanno inserite correttamente usando le corrispondenti funzioni del programma di
 word processing utilizzato.}
 
+% --- [SECTION] ALCUNE CONVENZIONI DI REDAZIONE ---
 \section{ALCUNE CONVENZIONI DI REDAZIONE}
+
+% --- [SUBSECTION] TITOLI E ALTRI SOSTANTIVI PARTICOLARI ---
 \subsection{Titoli e altri sostantivi particolari}
 I titoli di opere musicali o di altre opere artistiche devono essere in corsivo. Per esempio,
 \textit{Kontakte} di Karlheinz Stockhausen. Sostantivi come Sonata e locuzioni come Sonata
@@ -121,6 +142,7 @@ corsivo quando vengono spiegati o tradotti (per esempio: \textit{feedback} in it
 retro-alimentazione), altrimenti possono avere carattere normale (per esempio: il feedback
 è condizione normale di un sistema di trattamento di energia o di informazione).
 
+% --- [SUBSECTION] CITAZIONI TESTUALI ---
 \subsection{Citazioni testuali}
 Le citazioni testuali da articoli, libri o altra fonte bibliografica, vanno inserite nel corpo
 principale della tesina, tra virgolette se brevi (meno di tre righe). Se sono più estese,
@@ -147,6 +169,7 @@ Le citazioni in lingua straniera possono essere riportate nella lingua originale
 Oppure possono essere tradotte nel corpo principale del testo, riportando l’originale in una
 nota a fondo pagina.
 
+% --- FIGURE ---
 \subsection{Figure}
 Introdurre solo figure che siano opportune o necessarie a comprendere il flusso del
 discorso. Evitare ritratti di persone o elaborazioni grafiche puramente decorative.
@@ -169,6 +192,7 @@ discorso. Evitare ritratti di persone o elaborazioni grafiche puramente decorati
     \end{minipage}
 \end{figure}
 
+% --- [SUBSECTION] FORMULE ---
 \subsection{Formule}
 Espressioni matematiche ed equazioni semplici vanno inserite dopo un accapo ed una tabulazione. Per esempio:
 \[ Fc = 1/Tc \]
@@ -193,6 +217,7 @@ la eq \ref{eq:integrale_fourier}, qui sotto, illustra l'integrale che ci permett
     \label{eq:integrale_fourier}
 \end{equation}
 
+% --- RICHIAMI BIBLIOGRAFICI NEL TESTO ---
 \section{RICHIAMI BIBLIOGRAFICI NEL TESTO}
 I richiami bibliografici servono a indicare la fonte di una certa informazione o di un certo
 dato rilevante nel proprio discorso, oppure a indicare che un certo argomento è stato
@@ -218,6 +243,7 @@ tre o più autori o curatori, basta il primo nome seguito dall’abbreviazione \
 Ogni richiamo bibliografico deve corrispondere a uno dei titoli raccolti nella bibliografia
 presentata a fine testo.
 
+% --- [SUBSECTION] BIBLIOGRAFIA ---
 \subsection{Bibliografia}
 L'elenco delle fonti bibliografiche, posizionato a inizio pagina dopo la fine del testo
 principale, è dato in ordine alfabetico secondo il cognome degli autori, in carattere Arial
@@ -282,6 +308,7 @@ moderna e segnalando la data di redazione originale. Per esempio:
     Agostino di Ippona (1969), \textit{De Musica}, Firenze, Sansoni (redazione originale ca. 387 dC)
 \end{quote}
 
+% --- [SUBSECTION] RICHIAMI SITOGRAFICI E SITOGRAFIA ---
 \subsection{Richiami sitografici e sitografia}
 Laddove ci si richiama ad un sito web, si indica l’autore o (in assenza di questo) il nome
 identificativo del sito e la data di redazione della pagina web corrispondente, per esempio
@@ -297,6 +324,7 @@ locator, indirizzo internet).
 
 Si veda esempio di sitografia in questo stesso documento.
 
+% --- [SUBSECTION] RICHIAMI DISCOGRAFICI E DISCOGRAFIA ---
 \subsection{Richiami discografici e discografia}
 Nel testo è possibile fare richiami a incisioni discografiche o ad altre fonti sonore, da
 trattare come richiami bibliografici o sitografici. Si può usare la dicitura "vedere discografia"
@@ -305,6 +333,7 @@ riferimenti editoriali (luogo di pubblicazione, etichetta, numero di serie).
 
 Si vedano esempi di discografia alla fine di questo.
 
+% --- [SECTION] CONCLUSIONE ---
 \section{CONCLUSIONE}
 E’ buona norma concludere il testo riassumendo l’ambito degli argomenti e delle
 osservazioni presentate, il significato di quanto discusso (per esempio il rilievo storico di
@@ -319,13 +348,14 @@ altri elaborati d'esame sviluppati nel proprio percorso di formazione.
 \newpage
 % Stampa la bibliografia
 \printbibliography[title={BIBLIOGRAFIA}]
-\nocite{*} % per stampare tutta la bibliografia anche se non citata
+\nocite{*} % [FACOLTATIVO] per stampare tutta la bibliografia anche se non citata
 
 % --- SITOGRAFIA E DISCOGRAFIA ---
 % Nota: Biblatex può gestire anche queste, ma per semplicità e controllo totale
 % spesso conviene farle manualmente se sono poche, o usare filtri avanzati.
 % Qui un esempio manuale per rispettare esattamente l'ordine del PDF.
 
+% --- SITOGRAFIA ---
 \section{SITOGRAFIA}
 {\footnotesize
 Tanzi, D. (2005). "Musical objects and digital domains", relazione presentata alla conferenza Electroacoustic
@@ -334,12 +364,12 @@ Music Studies Network, Montréal 2005, http://www.ems-network.org/IMG/EMS2005-Ta
 Novati, Maddalena (ultimo accesso 10 Febbraio 2021) http://fonologia.lim.di.unimi.it/introduzione.php
 }
 
+% --- DISCOGRAFIA ---
 \section{DISCOGRAFIA}
 {\footnotesize
 Nono, L. \textit{Prometeo}. EMI Classic CRMCD 1039, 1993.
 
 Stockhausen, K.H. \textit{Kontakte}. Stockhausen Verlag, 1991.
 }
-
 
 \end{document}
