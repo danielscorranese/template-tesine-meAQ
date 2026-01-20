@@ -45,3 +45,6 @@ out/
 *.backup
 *.swp
 *.swo
+
+# PDF file
+*.pdf
